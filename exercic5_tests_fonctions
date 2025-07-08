@@ -1,0 +1,52 @@
+# === Fonctions à tester ===
+
+def est_palindrome(chaine):
+    """
+    Vérifie si une chaîne est un palindrome (insensible à la casse).
+    """
+    chaine_normalisee = chaine.lower()
+    return chaine_normalisee == chaine_normalisee[::-1]
+
+def inverser_chaine(chaine):
+    """
+    Retourne l'inverse d'une chaîne de caractères.
+    """
+    return chaine[::-1]
+
+def compter_voyelles(chaine):
+    """
+    Compte le nombre de voyelles dans une chaîne, sans tenir compte de la casse.
+    """
+    voyelles = "aeiouy"
+    return sum(1 for c in chaine.lower() if c in voyelles)
+
+# === Tests ===
+
+def test_est_palindrome():
+    assert est_palindrome("Radar") == True
+    assert est_palindrome("Bonjour") == False
+    assert est_palindrome("kayak") == True
+    assert est_palindrome("") == True  # chaîne vide est un palindrome
+    assert est_palindrome("Madam") == True
+    assert est_palindrome("Python") == False
+
+def test_inverser_chaine():
+    assert inverser_chaine("hello") == "olleh"
+    assert inverser_chaine("a") == "a"
+    assert inverser_chaine("") == ""
+    assert inverser_chaine("Bonjour") == "ruojnoB"
+
+def test_compter_voyelles():
+    assert compter_voyelles("Bonjour") == 3  # o, u, o
+    assert compter_voyelles("YOGA") == 3     # y, o, a
+    assert compter_voyelles("bcdfg") == 0
+    assert compter_voyelles("") == 0
+    assert compter_voyelles("AaEeIiOoUuYy") == 12  # toutes les voyelles deux fois
+
+# === Lancement des tests ===
+
+if __name__ == "__main__":
+    test_est_palindrome()
+    test_inverser_chaine()
+    test_compter_voyelles()
+    print(" Tous les tests sont passés avec succès.")

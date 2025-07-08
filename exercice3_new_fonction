@@ -1,0 +1,28 @@
+# Code de la fonction à tester : pour calculer la somme des nombres inferieurs à n 
+def somme_entiers_inferieurs(n):
+    
+    return sum
+
+# Fonction à tester
+def somme_entiers_inferieurs(n):
+    return sum(range(n))
+
+# Tests unitaires
+def test_somme_entiers_positive():
+    assert somme_entiers_inferieurs(5) == 10  # 0 + 1 + 2 + 3 + 4
+
+def test_somme_entiers_zero():
+    assert somme_entiers_inferieurs(0) == 0
+
+def test_somme_entiers_un():
+    assert somme_entiers_inferieurs(1) == 0
+
+def test_somme_entiers_negative():
+    assert somme_entiers_inferieurs(-3) == 0  # range(-3) est vide
+
+if __name__ == "__main__":
+    test_somme_entiers_positive()
+    test_somme_entiers_zero()
+    test_somme_entiers_un()
+    test_somme_entiers_negative()
+    print("Tous les tests sont passés ")

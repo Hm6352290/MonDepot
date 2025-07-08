@@ -1,0 +1,33 @@
+# Code de la fonction à tester
+def puissance(a, b):
+
+    return a ** b
+
+# Tests unitaires simples
+def test_puissance_positive():
+    assert puissance(2, 3) == 8
+
+def test_puissance_zero_exposant():
+    assert puissance(5, 0) == 1
+
+def test_puissance_zero_base():
+    assert puissance(0, 5) == 0
+
+def test_puissance_negative_exposant():
+    assert puissance(2, -2) == 0.25
+
+def test_puissance_negative_base():
+    assert puissance(-2, 3) == -8
+    assert puissance(-2, 2) == 4
+
+def test_puissance_float():
+    assert round(puissance(9, 0.5), 5) == 3.0  # Racine carrée
+
+if __name__ == "__main__":
+    test_puissance_positive()
+    test_puissance_zero_exposant()
+    test_puissance_zero_base()
+    test_puissance_negative_exposant()
+    test_puissance_negative_base()
+    test_puissance_float()
+    print("Tous les tests sont passés ")
